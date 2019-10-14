@@ -1,9 +1,47 @@
-<html>
-
+<!doctype html>
+<html lang="en">
 <head>
-
-Welcome Anitha from GutHub publishing
-
+  <meta charset="utf-8">
+  <title>ShrikeSurvey</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
+<body>
+
+<div class="row mb-1">
+        <div class="col">
+                <button class="btn btn-primary float-right " onClick="showSurveyForm=true">Create New Survey</button>
+                <button class="btn btn-primary float-right" onClick="SaveSurvey()">Save Survey</button>
+                <button class="btn btn-secondary mr-2 float-right" onClick="showSurveyForm=false">Cancel</button>
+
+        </div>
+</div>
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.2.0/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.2.0/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyCMCDqFtvUIWsLwIfcuiNwNxw_2s4UmrQ0",
+    authDomain: "shrike-survey.firebaseapp.com",
+    databaseURL: "https://shrike-survey.firebaseio.com",
+    projectId: "shrike-survey",
+    storageBucket: "shrike-survey.appspot.com",
+    messagingSenderId: "37188060588",
+    appId: "1:37188060588:web:68f69228c4a150dc976609",
+    measurementId: "G-6YKRQGKPJG"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+
+</body>
 
 </html>
