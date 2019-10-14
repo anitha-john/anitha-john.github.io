@@ -37,7 +37,6 @@ function GetSurvey(user){
   var username = (snapshot.val() && snapshot.val().username) || 'Anonymous';
 	console.log(value);
 	console.log(username);
-	debugger;
 	});
 }
 
@@ -45,15 +44,15 @@ function GetSurvey(user){
 function saveToFirebase(email) {
 		
 	firebase.database().ref('users/' + email).set({
-    username: email
+    username: email,
+	password: email + '123'
   })
   .then(function(snapshot) {
             success(snapshot); // some success method
         }, function(error) {
             console.log('error' + error);
             error(); // some error method
-        });
-  
+  });  
 }
 
 function success(snapshot){
