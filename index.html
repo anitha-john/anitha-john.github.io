@@ -33,12 +33,8 @@
 <script>
 
 function saveToFirebase(email) {
-    var emailObject = {
-        email: email
-    };
-	
 		
-	var starCountRef = firebase.database().ref('users/' + userId).push().set({
+	var starCountRef = firebase.database().ref('users/' + email).push().set({
     username: email,
     email: anithajohnpaul@gmail.com
   })
