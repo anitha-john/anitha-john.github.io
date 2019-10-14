@@ -14,7 +14,7 @@
 				<label> Enter the value </label>
 				<input id="txtValue" type = "text">
                 <button class="btn btn-primary float-right " onClick="saveToFirebase(document.getElementById('txtValue').value)">Create New Survey</button>
-                <button class="btn btn-primary float-right" onClick="GetSurvey()">Get Survey Details</button>
+                <button class="btn btn-primary float-right" onClick="GetSurvey(document.getElementById('txtValue').value)">Get Survey Details</button>
                 <button class="btn btn-secondary mr-2 float-right" onClick="showSurveyForm=false">Cancel</button>
 
         </div>
@@ -32,8 +32,8 @@
 
 <script>
 
-function GetSurvey(){
-    var value = firebase.database().ref('users/' + 'Debasish').once('value').then(function(snapshot) {
+function GetSurvey(user){
+    var value = firebase.database().ref('users/' + user).once('value').then(function(snapshot) {
   var username = (snapshot.val() && snapshot.val().username) || 'Anonymous';
 	console.log(value);
 	console.log(username);
@@ -44,7 +44,7 @@ function GetSurvey(){
 
 function saveToFirebase(email) {
 		
-	firebase.database().ref('users/' + email).push().set({
+	firebase.database().ref('users/' + email).set({
     username: email
   })
   .then(function(snapshot) {
