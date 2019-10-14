@@ -34,7 +34,7 @@
 
 function saveToFirebase(email) {
 		
-	firebase.database().ref('users/' + email).push().set({
+	firebase.database().ref('users/' + 'whattoset').push().set({
     username: email,
     email: 'anithajohnpaul@gmail.com'
   })
