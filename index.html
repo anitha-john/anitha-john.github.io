@@ -37,20 +37,22 @@ function saveToFirebase(email) {
         email: email
     };
 	
-	// Get a reference to the database service
-	var database = firebase.database();
-
-    firebase.database().ref('subscription-entries').push().set(emailObject)
-        .then(function(snapshot) {
-            success(); // some success method
+		
+	var starCountRef = firebase.database().ref('users/' + userId).push().set({
+    username: email,
+    email: anithajohnpaul@gmail.com
+  })
+  .then(function(snapshot) {
+            success(snapshot); // some success method
         }, function(error) {
             console.log('error' + error);
             error(); // some error method
         });
+  
 }
 
-function success(){
-console.log('Success');
+function success(snapshot){
+console.log('Success' + snapshot);
 }
 
 function error(){
