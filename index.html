@@ -36,6 +36,7 @@ function GetSurvey(){
     var value = firebase.database().ref('/users/').once('value').then(function(snapshot) {
   var username = (snapshot.val() && snapshot.val().username) || 'Anonymous';
 	console.log(value);
+	console.log(username);
 	});
 }
 
