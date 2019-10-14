@@ -35,7 +35,7 @@
 function GetSurvey(user){
     var value = firebase.database().ref('users/' + user).once('value').then(function(snapshot) {
   var username = (snapshot.val() && snapshot.val().username) || 'Anonymous';
-  var pass = (snapshot.val() && snapshot.val().password) || 'Reset Password';
+  var password = (snapshot.val() && snapshot.val().password) || 'Reset Password';
 	console.log(value);
 	console.log('username:' + username + ', password:' + password );
 	});
